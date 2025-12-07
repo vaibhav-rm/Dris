@@ -28,7 +28,7 @@ void draw_text(SDL_Renderer *renderer, float x, float y, const char *text, float
             verts[j].color.a = 255;
             verts[j].tex_coord.x = 0;
             verts[j].tex_coord.y = 0;
-            v += 3; // Advance 3 floats (x,y,z)
+            v += 4; // Advance 4 floats (x,y,z, color_bytes) = 16 bytes
         }
         
         // Draw 2 triangles for the quad: 0,1,2 and 0,2,3
@@ -264,6 +264,7 @@ int main(int argc, char *argv[]) {
             draw_text(renderer, box_rect.x + 20, box_rect.y + 40, "DRIS VIEWER", 3);
             draw_text(renderer, box_rect.x + 20, box_rect.y + 100, "Version: 1.0", 2);
             draw_text(renderer, box_rect.x + 20, box_rect.y + 130, "Fast & Simple", 2);
+            draw_text(renderer, box_rect.x + 20, box_rect.y + 160, "Credits: vaibhav-rm", 2);
         }
 
         SDL_RenderPresent(renderer);
