@@ -1,6 +1,8 @@
 # 👁️ Dris
 > **The no-nonsense, lightweight image viewer for Linux.**
 
+![Dris Demo](demo.gif)
+
 Dris (from Sanskrit *drishti*, meaning sight/vision) is built for speed and simplicity. It doesn't get in your way; it just shows your images.
 
 ## ✨ Features

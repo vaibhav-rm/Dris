@@ -2,7 +2,7 @@
 
 # Compile Dris
 echo "Compiling Dris..."
-gcc iv.c -o dris -lSDL2 -lm
+gcc dris.c -o dris -lSDL2 -lm
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
