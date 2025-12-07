@@ -1,0 +1,21 @@
+# Binaries
+dris
+dris.exe
+*.o
+*.obj
+*.dll
+
+# Release / Dist
+dist/
+
+# Local Build Hacks (NSIS)
+local_nsis/
+local_stubs/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Test/Temp
+dris_test
+*.log
