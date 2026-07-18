@@ -36,14 +36,16 @@ This will:
 
 
 ## ✨ Features
-- **🚀 Blazing Fast**: Powered by `stb_image` for instant loading of PNG, JPG, BMP, and more.
+- **🚀 Blazing Fast**: Powered by `stb_image` for instant loading of PNG, JPG, BMP, WEBP, and more.
 - **🔍 Deep Zoom**: Smooth-scrolling zoom centered on your cursor.
-- **✋ Intuitive Pan**: Grab and drag to move around large images.
-- **🎛️ Minimal UI**: A sleek, unobtrusive toolbar for quick controls.
-- **📦 Zero Bloat**: No heavy frameworks. Just C and SDL2.
+- **✋ Intuitive Pan**: Grab and drag or use Ctrl + Arrow keys to navigate around large images.
+- **🔄 Instant Rotation**: Rotate images 90° clockwise or counter-clockwise with a single keystroke.
+- **📁 Directory Navigation**: Scan directories automatically and switch to adjacent images with Left/Right Arrows or Space.
+- **🎛️ Toggleable UI**: Sleek, unobtrusive toolbar that can be hidden for borderless distraction-free viewing.
+- **📦 Zero Bloat**: No heavy web framework or electron wrapper. Just native C and SDL2.
 
 ## 🛠️ Build
-Requirement: `libsdl2-dev`
+Requirement: `libsdl2-dev` (Debian/Ubuntu) or `SDL2-devel` (Fedora/RHEL)
 
 ```bash
 gcc dris.c -o dris -lSDL2 -lm
@@ -56,11 +58,21 @@ Open an image directly from the terminal:
 ./dris path/to/image.png
 ```
 
+### Keyboard & Mouse Controls
+
 | Control | Action |
 | :--- | :--- |
-| **Scroll** | Zoom In / Out |
-| **Drag** | Pan Image |
-| **ESC** | Quit / Close Overlay |
+| **Scroll / + / -** | Zoom In / Out (Centered on cursor) |
+| **Drag Mouse** | Free Pan Image |
+| **Ctrl + Arrows** | Pan Image (Up, Down, Left, Right) |
+| **Right / Space / PgDn** | Next Image in directory |
+| **Left / Backspace / PgUp** | Previous Image in directory |
+| **R** | Rotate 90° Clockwise |
+| **L** | Rotate 90° Counter-Clockwise |
+| **F / F11** | Toggle Fullscreen (hides toolbar) |
+| **T / H** | Toggle Toolbar visibility |
+| **0 / Home** | Reset Zoom and Fit to Window |
+| **ESC** | Close About Box / Exit Fullscreen / Quit |
 
 
 *Powered by SDL2 & [stb](https://github.com/nothings/stb).*

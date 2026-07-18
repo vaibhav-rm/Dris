@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dris — Lightweight, No-Nonsense Image Viewer</title>
+    <meta name="description" content="A blazing-fast, lightweight image viewer for Linux and Windows built in C and SDL2. Zero bloat, instant loading, smooth pan, zoom, and rotation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Dris
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#install">Installation</a>
+                <a href="#shortcuts">Shortcuts</a>
+                <a href="https://github.com/vaibhav-rm/dris" target="_blank" class="nav-github-btn">
+                    <svg height="20" viewBox="0 0 16 16" width="20" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.35 2.68.91 0 .55.01 1.07.01 1.19 0 .21-.15.47-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8z"></path></svg>
+                    GitHub
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <h1 class="hero-title">Instantly view images with <span class="gradient-text">zero bloat</span>.</h1>
+            <p class="hero-subtitle">
+                Dris (Sanskrit for <em>sight</em>) is a high-performance, minimalist image viewer for Linux and Windows. Built in pure C and hardware-accelerated SDL2.
+            </p>
+            <div class="hero-actions">
+                <a href="#install" class="btn btn-primary">Get Dris</a>
+                <a href="https://github.com/vaibhav-rm/dris" target="_blank" class="btn btn-secondary">View Source</a>
+            </div>
+            <div class="hero-badges">
+                <span class="badge"><span class="badge-dot"></span> Linux Native</span>
+                <span class="badge"><span class="badge-dot"></span> Windows Supported</span>
+                <span class="badge"><span class="badge-dot"></span> &lt; 200 KB Binary</span>
+                <span class="badge"><span class="badge-dot"></span> Hardware Accelerated</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Dris?</h2>
+                <p>Designed for engineers and users who appreciate speed, lightweight binaries, and minimal overhead.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Blazing Fast</h3>
+                    <p>Powered by the single-header <code>stb_image</code> library. Decodes and displays PNG, JPG, BMP, TGA, GIF, and WEBP instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                    <h3>Deep Cursor Zoom</h3>
+                    <p>Zoom in and out smoothly using your mouse scroll. Dris dynamically centers the scaling anchor precisely under your cursor.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+                    </div>
+                    <h3>Intuitive Pan</h3>
+                    <p>Grab and drag to navigate large or zoomed-in images. Zero lag, hardware-accelerated movement via SDL2's rendering pipeline.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+                    </div>
+                    <h3>Instant Rotation</h3>
+                    <p>Rotate image 90° clockwise or counter-clockwise instantly in the viewer. Recalculates fits and coordinates automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Folder Navigation</h3>
+                    <p>Scan directories automatically. Switch between adjacent image files in the same folder with <code>Left/Right Arrow</code> or <code>Space</code> keys.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                    </div>
+                    <h3>Zero Bloat</h3>
+                    <p>No heavy electron frameworks, node runtimes, or system webviews. Written entirely in clean, native C and compiles to a tiny executable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="install" class="install-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Started</h2>
+                <p>Dris can be compiled from source on Linux or run using prebuilt packages for Linux and Windows.</p>
+            </div>
+
+            <!-- Tab Container -->
+            <div class="install-tabs-wrapper">
+                <div class="tab-headers">
+                    <button class="tab-header active" data-tab="tab-linux-compile">Linux (Compile)</button>
+                    <button class="tab-header" data-tab="tab-linux-binary">Linux (Prebuilt)</button>
+                    <button class="tab-header" data-tab="tab-windows-installer">Windows (Installer)</button>
+                    <button class="tab-header" data-tab="tab-windows-portable">Windows (Portable)</button>
+                </div>
+
+                <div class="tab-contents">
+                    <!-- Linux Compile -->
+                    <div class="tab-content active" id="tab-linux-compile">
+                        <p class="tab-desc">To compile Dris, you need GCC and the SDL2 development package installed.</p>
+                        <div class="code-block-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code># 1. Install SDL2 (Fedora / RHEL)
+sudo dnf install SDL2-devel
+
+# Install SDL2 (Debian / Ubuntu / Mint)
+# sudo apt install libsdl2-dev
+
+# 2. Clone the repository
+git clone https://github.com/vaibhav-rm/dris.git
+cd dris
+
+# 3. Compile and install locally
+./install.sh</code></pre>
+                        </div>
+                        <p class="tab-note">The installer script compiles the binary, moves it to <code>~/.local/bin/</code>, and creates a desktop entry (<code>~/.local/share/applications/dris.desktop</code>) so you can set it as your default image viewer.</p>
+                    </div>
+
+                    <!-- Linux Binary -->
+                    <div class="tab-content" id="tab-linux-binary">
+                        <p class="tab-desc">Download the prebuilt static release for Linux systems.</p>
+                        <div class="download-container">
+                            <a href="https://github.com/vaibhav-rm/dris/releases" target="_blank" class="download-card-btn">
+                                <span class="download-icon">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16"/><path d="M12 4v16"/></svg>
+                                </span>
+                                <span class="download-text-wrap">
+                                    <span class="dl-title">Download dris-linux.tar.gz</span>
+                                    <span class="dl-subtitle">Precompiled Linux Binary & Desktop Entry</span>
+                                </span>
+                            </a>
+                        </div>
+                        <p class="tab-note">Extract the tarball and run the included <code>./install.sh</code> to register the viewer with your desktop environment.</p>
+                    </div>
+
+                    <!-- Windows Installer -->
+                    <div class="tab-content" id="tab-windows-installer">
+                        <p class="tab-desc">Install Dris system-wide on Windows with file associations setup automatically.</p>
+                        <div class="download-container">
+                            <a href="https://github.com/vaibhav-rm/dris/releases" target="_blank" class="download-card-btn win">
+                                <span class="download-icon">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                </span>
+                                <span class="download-text-wrap">
+                                    <span class="dl-title">Download DrisInstaller.exe</span>
+                                    <span class="dl-subtitle">NSIS Windows Setup Wizard</span>
+                                </span>
+                            </a>
+                        </div>
+                        <p class="tab-note">The setup wizard installs Dris to your Program Files directory, creates shortcuts, and registers file associations for <code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>, and <code>.bmp</code>.</p>
+                    </div>
+
+                    <!-- Windows Portable -->
+                    <div class="tab-content" id="tab-windows-portable">
+                        <p class="tab-desc">Run Dris anywhere without installation. Perfect for USB drives or quick testing.</p>
+                        <div class="download-container">
+                            <a href="https://github.com/vaibhav-rm/dris/releases" target="_blank" class="download-card-btn win">
+                                <span class="download-icon">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                                </span>
+                                <span class="download-text-wrap">
+                                    <span class="dl-title">Download dris-windows.zip</span>
+                                    <span class="dl-subtitle">Portable ZIP containing dris.exe & SDL2.dll</span>
+                                </span>
+                            </a>
+                        </div>
+                        <p class="tab-note">Unzip the archive and run <code>dris.exe</code> directly. Keep <code>SDL2.dll</code> in the same folder as the executable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keyboard Shortcuts Guide -->
+    <section id="shortcuts" class="shortcuts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Keyboard Shortcuts</h2>
+                <p>Control Dris like a power user. These hotkeys are supported natively in the C application.</p>
+            </div>
+
+            <div class="shortcuts-container">
+                <div class="shortcuts-column">
+                    <h3>Navigation & View</h3>
+                    <ul class="shortcut-list">
+                        <li>
+                            <span class="shortcut-keys"><kbd>→</kbd> or <kbd>Space</kbd> or <kbd>PgDn</kbd></span>
+                            <span class="shortcut-desc">Next Image in Folder</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>←</kbd> or <kbd>Backspace</kbd> or <kbd>PgUp</kbd></span>
+                            <span class="shortcut-desc">Previous Image in Folder</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>F</kbd> or <kbd>F11</kbd></span>
+                            <span class="shortcut-desc">Toggle Fullscreen (hides toolbar)</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>T</kbd> or <kbd>H</kbd></span>
+                            <span class="shortcut-desc">Toggle Toolbar Visibility</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>Esc</kbd></span>
+                            <span class="shortcut-desc">Close About / Exit Fullscreen / Quit</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="shortcuts-column">
+                    <h3>Zoom & Panning</h3>
+                    <ul class="shortcut-list">
+                        <li>
+                            <span class="shortcut-keys"><kbd>Scroll Wheel</kbd> or <kbd>+</kbd> / <kbd>=</kbd></span>
+                            <span class="shortcut-desc">Zoom In (Cursor-anchored)</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>Scroll Wheel</kbd> or <kbd>-</kbd></span>
+                            <span class="shortcut-desc">Zoom Out (Cursor-anchored)</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>0</kbd> or <kbd>Home</kbd></span>
+                            <span class="shortcut-desc">Reset Zoom and Fit Image to Viewport</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>Ctrl</kbd> + <kbd>Arrow Keys</kbd></span>
+                            <span class="shortcut-desc">Pan Image (Left, Right, Up, Down)</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>Drag Mouse</kbd></span>
+                            <span class="shortcut-desc">Free Panning around Image</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="shortcuts-column">
+                    <h3>Image Rotations</h3>
+                    <ul class="shortcut-list">
+                        <li>
+                            <span class="shortcut-keys"><kbd>R</kbd></span>
+                            <span class="shortcut-desc">Rotate 90° Clockwise</span>
+                        </li>
+                        <li>
+                            <span class="shortcut-keys"><kbd>L</kbd></span>
+                            <span class="shortcut-desc">Rotate 90° Counter-Clockwise</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <p>&copy; 2026 Dris Viewer. Released under the MIT License.</p>
+                <p class="footer-powered">Powered by <a href="https://www.libsdl.org/" target="_blank">SDL2</a> and the <a href="https://github.com/nothings/stb" target="_blank">stb</a> library ecosystem.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/vaibhav-rm/dris" target="_blank">GitHub Repository</a>
+                <span>&bull;</span>
+                <a href="#features">Features</a>
+                <span>&bull;</span>
+                <a href="#install">Installation</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
